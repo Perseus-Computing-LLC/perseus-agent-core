@@ -15,7 +15,7 @@ from perseus_agent_core.memory.backend import (
     MemorySearchResult,
 )
 from perseus_agent_core.memory.elastic_memory import ElasticMemoryBackend
-from perseus_agent_core.memory.engram_memory import EngramMemoryBackend
+from perseus_agent_core.memory.engram_memory import EngramMemoryBackend, MimirMemoryBackend
 
 __all__ = [
     "MemoryBackend",
@@ -24,4 +24,5 @@ __all__ = [
     "MemorySearchResult",
     "ElasticMemoryBackend",
     "EngramMemoryBackend",
+    "MimirMemoryBackend",
 ]
