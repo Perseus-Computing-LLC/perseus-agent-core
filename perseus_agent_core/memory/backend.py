@@ -53,8 +53,7 @@ class MemoryBackend(ABC):
     """Abstract interface for agent memory backends.
 
     Implementations:
-      - ElasticMemoryBackend: Uses Elastic Agent Builder MCP
-      - EngramMemoryBackend: Uses Engram-rs CLI (SQLite-backed)
+      - MimirMemoryBackend: Uses Mimir for semantic and keyword search
     """
 
     @abstractmethod
