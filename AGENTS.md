@@ -7,4 +7,4 @@ Shared memory and tool layer for Perseus agents.
 - `perseus_agent_core/tools/` — decision log, knowledge graph, project context
 
 ## Memory Backend
-The canonical backend is Mneme (formerly Mimir). See [tcconnally/mimir](https://github.com/tcconnally/mimir).
+The canonical backend is Perseus Vault (formerly Mimir/Perseus Vault). See [tcconnally/mimir](https://github.com/Perseus-Computing-LLC/perseus-vault).
