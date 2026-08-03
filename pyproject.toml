@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "perseus-agent-core"
 version = "0.2.0"
-description = "Shared memory and tool layer for Perseus agents — MemoryEntry, Elastic/Engram backends, decision log, knowledge graph, project context."
+description = "Perseus Vault memory boundary plus legacy backend compatibility, decision log, knowledge graph, and project context."
 readme = "README.md"
 license = { text = "MIT" }
 authors = [{ name = "tcconnally" }]

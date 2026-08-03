@@ -1,12 +1,11 @@
-"""Mimir memory backend — self-hosted, MIT-licensed persistent memory.
+"""Legacy Engram/Mimir compatibility backend.
 
-Uses Mimir (formerly Engram-rs) as the memory store. Mimir is an MCP-native
+Uses the historical Mimir (formerly Engram-rs) memory store. Mimir is an MCP-native
 JSON-RPC stdio server backed by SQLite + FTS5. It provides persistent,
 searchable memory across sessions with zero cloud dependencies.
 
-This backend implements the same MemoryBackend interface as ElasticMemoryBackend,
-so switching between Elastic (cloud) and Mimir (local) requires changing
-exactly one line of configuration.
+This backend implements the shared interface for older consumers. It is not the
+canonical Perseus Vault path; new integrations should use ``VaultMemoryBackend``.
 
 Mimir: https://github.com/tcconnally/mimir (MIT licensed)
 Perseus: https://github.com/tcconnally/perseus (context + memory for AI agents)
