@@ -16,7 +16,7 @@ dependencies = []
 
 [project.optional-dependencies]
 elastic = ["elasticsearch>=8.0"]
-dev = ["pytest>=8.0"]
+dev = ["pytest>=8.0", "pytest-asyncio>=0.23"]
 
 [project.urls]
 Homepage = "https://github.com/Perseus-Computing-LLC/perseus-agent-core"
