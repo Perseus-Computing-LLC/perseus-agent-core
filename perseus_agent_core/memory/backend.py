@@ -1,8 +1,8 @@
 """Abstract memory backend interface.
 
-All memory backends (Elastic, Engram-rs) implement this interface so the agent
-can swap between managed cloud memory and self-hosted open-source memory
-without changing any agent code.
+The canonical product implementation is the Vault adapter. The historical
+Elastic implementation is isolated and must not be selected as the current
+authority/evidence store.
 """
 
 from abc import ABC, abstractmethod
@@ -52,8 +52,8 @@ class MemorySearchResult:
 class MemoryBackend(ABC):
     """Abstract interface for agent memory backends.
 
-    Implementations:
-      - MimirMemoryBackend: Uses Mimir for semantic and keyword search
+    Implementations include the canonical ``VaultMemoryBackend`` adapter and
+    the isolated historical Elastic backend.
     """
 
     @abstractmethod

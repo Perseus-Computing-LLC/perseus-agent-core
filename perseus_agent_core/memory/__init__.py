@@ -1,11 +1,8 @@
-"""Memory backends for Perseus Memory Agent.
+"""Canonical memory backend boundary.
 
-Two implementations of the same MemoryBackend interface:
-
-- ElasticMemoryBackend: Production, cloud-managed, uses Elastic MCP
-- EngramMemoryBackend: Self-hosted, MIT-licensed, SQLite-backed
-
-Switching backends requires changing one line of config (MEMORY_BACKEND).
+``VaultMemoryBackend`` is the only current product boundary. The historical
+Elastic adapter is isolated under :mod:`perseus_agent_core.memory.legacy` and
+is never re-exported here.
 """
 
 from perseus_agent_core.memory.backend import (
@@ -14,15 +11,18 @@ from perseus_agent_core.memory.backend import (
     MemoryEntry,
     MemorySearchResult,
 )
-from perseus_agent_core.memory.elastic_memory import ElasticMemoryBackend
-from perseus_agent_core.memory.engram_memory import EngramMemoryBackend, MimirMemoryBackend
+from perseus_agent_core.memory.vault import VaultClient, VaultMemoryBackend
+
+CANONICAL_BACKEND = "perseus-vault"
+LEGACY_BACKENDS = ("elastic",)
 
 __all__ = [
     "MemoryBackend",
     "MemoryBackendError",
     "MemoryEntry",
     "MemorySearchResult",
-    "ElasticMemoryBackend",
-    "EngramMemoryBackend",
-    "MimirMemoryBackend",
+    "VaultClient",
+    "VaultMemoryBackend",
+    "CANONICAL_BACKEND",
+    "LEGACY_BACKENDS",
 ]

@@ -7,4 +7,6 @@ Shared memory and tool layer for Perseus agents.
 - `perseus_agent_core/tools/` — decision log, knowledge graph, project context
 
 ## Memory Backend
-The canonical backend is Perseus Vault (formerly Mimir/Perseus Vault). See [tcconnally/mimir](https://github.com/Perseus-Computing-LLC/perseus-vault).
+The canonical backend is Perseus Vault. Use `VaultMemoryBackend` with an
+explicitly configured Vault client. Elastic is an isolated historical path;
+do not select it for new product work.
