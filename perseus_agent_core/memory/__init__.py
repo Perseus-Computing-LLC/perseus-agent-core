@@ -1,8 +1,8 @@
-"""Canonical and legacy-compatible memory backend boundaries.
+"""Canonical memory backend boundary.
 
-``VaultMemoryBackend`` is the current product boundary. Elastic and Engram are
-retained as explicitly legacy compatibility implementations for older agents;
-they are not interchangeable authority or evidence stores.
+``VaultMemoryBackend`` is the only current product boundary. The historical
+Elastic adapter is isolated under :mod:`perseus_agent_core.memory.legacy` and
+is never re-exported here.
 """
 
 from perseus_agent_core.memory.backend import (
@@ -11,21 +11,16 @@ from perseus_agent_core.memory.backend import (
     MemoryEntry,
     MemorySearchResult,
 )
-from perseus_agent_core.memory.elastic_memory import ElasticMemoryBackend
-from perseus_agent_core.memory.engram_memory import EngramMemoryBackend, MimirMemoryBackend
 from perseus_agent_core.memory.vault import VaultClient, VaultMemoryBackend
 
 CANONICAL_BACKEND = "perseus-vault"
-LEGACY_BACKENDS = ("elastic", "engram")
+LEGACY_BACKENDS = ("elastic",)
 
 __all__ = [
     "MemoryBackend",
     "MemoryBackendError",
     "MemoryEntry",
     "MemorySearchResult",
-    "ElasticMemoryBackend",
-    "EngramMemoryBackend",
-    "MimirMemoryBackend",
     "VaultClient",
     "VaultMemoryBackend",
     "CANONICAL_BACKEND",

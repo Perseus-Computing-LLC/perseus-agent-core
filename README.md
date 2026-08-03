@@ -13,9 +13,9 @@ crash shipped twice because of it. Fixes now land once, here.
 - `perseus_agent_core.memory` — `MemoryEntry`, `MemorySearchResult`,
   `MemoryBackend` (interface), and `VaultMemoryBackend`, a transport-neutral
   adapter for an explicitly configured Perseus Vault client.
-- `ElasticMemoryBackend` and `EngramMemoryBackend` are **legacy compatibility
-  backends**. They are not the canonical authority/evidence store and should
-  not be selected by new integrations.
+- `perseus_agent_core.memory.legacy` contains the isolated historical Elastic
+  adapter. It is not re-exported by the current memory boundary and is not the
+  canonical authority/evidence store.
 - `perseus_agent_core.tools` — `DecisionLogTool`, `KnowledgeGraphTool`,
   `ProjectContextTool`.
 
@@ -26,7 +26,7 @@ the consuming repos.
 
 ```bash
 pip install "perseus-agent-core @ git+https://github.com/Perseus-Computing-LLC/perseus-agent-core.git"
-# Legacy compatibility only; new code should inject a Vault client into
+# Historical Elastic compatibility only; new code should inject a Vault client into
 # VaultMemoryBackend instead:
 pip install "perseus-agent-core[elastic] @ git+https://github.com/Perseus-Computing-LLC/perseus-agent-core.git"
 ```
@@ -44,5 +44,5 @@ memory = VaultMemoryBackend(vault_client)
 log = DecisionLogTool(memory)
 ```
 
-The historical `ElasticMemoryBackend`, `EngramMemoryBackend`, and
-`MimirMemoryBackend` names remain import-compatible but are explicitly legacy.
+Intentional historical Elastic consumers can import `ElasticMemoryBackend` from
+`perseus_agent_core.memory.legacy`.

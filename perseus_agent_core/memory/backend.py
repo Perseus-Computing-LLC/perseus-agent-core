@@ -1,8 +1,8 @@
 """Abstract memory backend interface.
 
-The canonical product implementation is the Vault adapter. Legacy Elastic and
-Engram implementations remain available for compatibility but must not be
-selected as the current authority/evidence store.
+The canonical product implementation is the Vault adapter. The historical
+Elastic implementation is isolated and must not be selected as the current
+authority/evidence store.
 """
 
 from abc import ABC, abstractmethod
@@ -53,7 +53,7 @@ class MemoryBackend(ABC):
     """Abstract interface for agent memory backends.
 
     Implementations include the canonical ``VaultMemoryBackend`` adapter and
-    legacy compatibility backends.
+    the isolated historical Elastic backend.
     """
 
     @abstractmethod

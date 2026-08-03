@@ -8,5 +8,5 @@ Shared memory and tool layer for Perseus agents.
 
 ## Memory Backend
 The canonical backend is Perseus Vault. Use `VaultMemoryBackend` with an
-explicitly configured Vault client. Elastic and Engram/Mimir implementations
-are legacy compatibility paths only; do not select them for new product work.
+explicitly configured Vault client. Elastic is an isolated historical path;
+do not select it for new product work.
